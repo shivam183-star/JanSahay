@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@theme {
+  --color-gov-blue-50: #e6f0ff;
+  --color-gov-blue-100: #cce1ff;
+  --color-gov-blue-200: #99c3ff;
+  --color-gov-blue-300: #66a5ff;
+  --color-gov-blue-400: #3387ff;
+  --color-gov-blue-500: #0069ff;
+  --color-gov-blue-600: #0054cc;
+  --color-gov-blue-700: #003f99;
+  --color-gov-blue-800: #002a66;
+  --color-gov-blue-900: #001533;
+
+  --color-gov-green-50: #e6f9f2;
+  --color-gov-green-100: #ccf3e5;
+  --color-gov-green-200: #99e7cb;
+  --color-gov-green-300: #66dbb1;
+  --color-gov-green-400: #33cf97;
+  --color-gov-green-500: #10b981;
+  --color-gov-green-600: #0d9467;
+  --color-gov-green-700: #0a6f4d;
+  --color-gov-green-800: #074a34;
+  --color-gov-green-900: #03251a;
+}
