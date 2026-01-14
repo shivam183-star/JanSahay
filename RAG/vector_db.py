@@ -3,8 +3,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 import json
 
-# Load data
-with open("schemes.json") as f:
+with open("RAG/schemes.json") as f:
     schemes = json.load(f)
 
 docs = []
@@ -27,5 +26,5 @@ embeddings = HuggingFaceEmbeddings(
 
 db = FAISS.from_documents(docs, embeddings)
 
-db.save_local("jansahay_vector_db")
+db.save_local("RAG/jansahay_vector_db")
 print("Vector Data Saved")
