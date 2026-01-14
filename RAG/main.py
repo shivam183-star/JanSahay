@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
-
+from fastapi.middleware.cors import CORSMiddleware
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
@@ -16,6 +16,15 @@ db = FAISS.load_local(
 )
 
 app = FastAPI(title="JanSahay RAG API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 class UserProfile(BaseModel):
     age: Optional[int] = None
@@ -87,6 +96,7 @@ def find_schemes(user: UserProfile):
             "error": "Internal processing error",
             "details": str(e)
         }
+
 
 if __name__ == "__main__":
     import uvicorn
