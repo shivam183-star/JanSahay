@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Globe, Menu, X, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
 
 const Navbar = ({ language, setLanguage }) => {
@@ -32,7 +33,7 @@ const Navbar = ({ language, setLanguage }) => {
   }
 
   return (
-    <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+    <nav className="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <button 
@@ -40,7 +41,7 @@ const Navbar = ({ language, setLanguage }) => {
             className="flex items-center gap-2 group cursor-pointer"
           >
             <Sparkles className="w-8 h-8 text-gov-blue-600" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-gov-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gov-blue-600 bg-clip-text text-transparent">
               {content[language].title}
             </span>
           </button>
@@ -65,9 +66,11 @@ const Navbar = ({ language, setLanguage }) => {
               <Globe size={16} className="text-gray-600" />
               <span className="text-sm text-gray-600">{language === 'en' ? 'हिंदी' : 'EN'}</span>
             </button>
-            <Button>
-              {content[language].findSchemes}
-            </Button>
+            <Link to="/discover">
+              <Button>
+                {content[language].findSchemes}
+              </Button>
+            </Link>
           </div>
 
           <div className="md:hidden flex items-center gap-3">
@@ -110,13 +113,13 @@ const Navbar = ({ language, setLanguage }) => {
             >
               {content[language].howItWorks}
             </a>
-            <a
-              href="#find-schemes"
+            <Link
+              to="/discover"
               onClick={() => setIsOpen(false)}
               className="block text-center px-6 py-3 mt-2 bg-gradient-to-r from-gov-green-500 to-gov-green-600 text-white rounded-lg hover:from-gov-green-600 hover:to-gov-green-700 transition-all font-semibold shadow-md"
             >
               {content[language].findSchemes}
-            </a>
+            </Link>
           </div>
         </div>
       )}

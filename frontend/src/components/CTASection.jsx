@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
 
@@ -26,10 +27,12 @@ const CTASection = ({ language }) => {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             {content[language].subtitle}
           </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8">
-            {content[language].cta}
-            <ArrowRight className="w-5 h-5" />
-          </Button>
+          <Link to="/discover">
+            <Button size="lg" variant="secondary" className="text-lg px-8">
+              {content[language].cta}
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+          </Link>
         </CardContent>
       </Card>
     </section>

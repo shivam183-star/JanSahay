@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle, Bot } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
 
@@ -50,10 +51,12 @@ const HeroSection = ({ language }) => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              {content[language].cta}
-              <ArrowRight className="w-5 h-5" />
-            </Button>
+            <Link to="/discover">
+              <Button size="lg" className="text-lg px-8">
+                {content[language].cta}
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="text-lg px-8">
               {content[language].ctaSecondary}
             </Button>

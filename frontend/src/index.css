@@ -22,4 +22,25 @@
   --color-gov-green-700: #0a6f4d;
   --color-gov-green-800: #074a34;
   --color-gov-green-900: #03251a;
+
+  --font-family-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+.pattern-dots {
+  background-color: #f9fafb47;
+  background-image: radial-gradient(circle, #e5e7eb 1.5px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.pattern-grid {
+  background-color: #f9fafb;
+  background-image: 
+    linear-gradient(rgba(229, 231, 235, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 231, 235, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-noise {
+  background-color: #f9fafb;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }

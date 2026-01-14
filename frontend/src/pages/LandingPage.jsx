@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Navbar from '../components/Navbar'
 import HeroSection from '../components/HeroSection'
 import HowItWorks from '../components/HowItWorks'
@@ -7,9 +6,7 @@ import CTASection from '../components/CTASection'
 import Footer from '../components/Footer'
 import AIAssistant from '../components/AIAssistant'
 
-const LandingPage = () => {
-  const [language, setLanguage] = useState('en')
-
+const LandingPage = ({ language, setLanguage }) => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar language={language} setLanguage={setLanguage} />
